@@ -1,0 +1,127 @@
+/*===============================
+=           Footer            =
+===============================*/
+#page-footer {
+    background-color: #fafafa;
+    padding-top: 50px;
+    .trusted-logos {
+        @include bp(sm-down) {
+            margin-bottom: 15px;
+        }
+        ul {
+            text-align: center;
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 8px;
+                @include bp(sm-down) {
+                    zoom: .8;
+                }
+            }
+        }
+    }
+    .footer-licence {
+        text-align: center;
+        p {
+            font-family: $lato-bold;
+            font-size: 14px;
+            line-height: 1.9;
+            color: #808080;
+            margin-bottom: 0;
+        }
+    }
+    .cities-list {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        @include bp(sm-down) {
+            margin-bottom: 20px;
+        }
+        ul {
+            text-align: center;
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                a {
+                    font-family: $lato-reg;
+                    font-size: 14px;
+                    line-height: 1.9;
+                    padding: 5px 10px;
+                    color: $blue;
+                    display: inline-block;
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        background-color: #fafafa;
+        padding: 25px 0 20px;
+        text-align: center;
+        ul {
+            display: inline-block;
+            li {
+                display: inline-block;
+            }
+        }        
+        small {
+            font-family: $lato-reg;
+            font-size: 11px;
+            line-height: 1.45;
+            letter-spacing: 1px;
+            color: #595a5b;
+            opacity: 0.8;
+            a {
+                font-family: $lato-bold;
+                color: $blue;
+                &:hover {
+                    color: $yellow;
+                }
+            }
+        }
+    }
+}
+
+a#go-to-top {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: fixed;
+    right: 20px;
+    z-index: 9996;
+    display: block;
+    bottom: 72px;
+    text-align: center;
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    cursor: pointer;
+    visibility: hidden;
+    i {
+        color: #fff;
+        font-size: 16px;
+        font-family: "Font Awesome 5 Pro";
+        &:after {
+            content: "\f077";
+        }
+    }
+    &.on {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+/*=======End of Footer ========*/
+
+

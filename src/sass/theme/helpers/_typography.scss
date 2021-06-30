@@ -1,0 +1,311 @@
+// Import fonts and fonts variables
+
+@font-face {
+    font-family: 'Lato Black';
+    src: url('../fonts/Lato-Black.woff2') format('woff2'),
+        url('../fonts/Lato-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Bold';
+    src: url('../fonts/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/Lato-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Regular';
+    src: url('../fonts/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Semibold';
+    src: url('../fonts/Lato-Semibold.woff2') format('woff2'),
+        url('../fonts/Lato-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Italic';
+    src: url('../fonts/Lato-Italic.woff2') format('woff2'),
+        url('../fonts/Lato-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Light';
+    src: url('../fonts/Lato-Light.woff2') format('woff2'),
+        url('../fonts/Lato-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Medium';
+    src: url('../fonts/Lato-Medium.woff2') format('woff2'),
+        url('../fonts/Lato-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Exo 2 Black';
+    src: url('../fonts/Exo2-Black.woff2') format('woff2'),
+        url('../fonts/Exo2-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$lato-bold: 'Lato Bold';
+$lato-semi: 'Lato Semibold';
+$lato-reg: 'Lato Regular';
+$lato-med: 'Lato Medium';
+$lato-black: 'Lato Black';
+$lato-italic: 'Lato Italic';
+$lato-light: 'Lato Light';
+$exo-black: 'Exo 2 Black';
+
+$font-main: 'Lato Regular';
+$font-heading: 'Lato Bold';
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?cg6kkb');
+  src:  url('../fonts/icomoon.eot?cg6kkb#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?cg6kkb') format('truetype'),
+    url('../fonts/icomoon.woff?cg6kkb') format('woff'),
+    url('../fonts/icomoon.svg?cg6kkb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-long-arrow-alt-left:before {
+  content: "\e90c";
+}
+.icon-long-arrow-alt-right:before {
+  content: "\e90d";
+}
+.icon-angle-down:before {
+  content: "\e906";
+}
+.icon-angle-left:before {
+  content: "\e907";
+}
+.icon-angle-right:before {
+  content: "\e908";
+}
+.icon-angle-up:before {
+  content: "\e909";
+}
+.icon-image:before {
+  content: "\e90a";
+}
+.icon-star:before {
+  content: "\e90b";
+}
+.icon-calendar:before {
+  content: "\e905";
+}
+.icon-lock:before {
+  content: "\e904";
+}
+.icon-drawer:before {
+  content: "\e902";
+}
+.icon-pencil:before {
+  content: "\e900";
+}
+.icon-truck:before {
+  content: "\e903";
+}
+.icon-phone:before {
+  content: "\e901";
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body { 
+	font: {
+		size:$base-size;
+		family: $font-main;
+	}
+	-webkit-text-size-adjust: 100%;  //fix for iOS
+	overflow-x:hidden;
+    color: #777;    
+}
+
+p {
+    font-family: $font-main;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+small {
+    font-size: 0.875em;
+}
+
+address {
+    padding:0px;
+    margin:0px;
+}
+
+a {
+    @include animate-fade;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-heading;
+    font-weight: 500;
+}
+
+li {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+iframe {
+    border: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+-moz-appearance: textfield;
+}
+// reset
+a {
+    @include animate-fade;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a, button, input, textarea {
+    &:focus {
+        outline: none!important;
+    }
+}
+
+button, input[type="text"], input[type="email"], input[type="tel"], textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    //background-clip: padding-box;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    border-radius: 0;
+}
+
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding:0;
+    margin: 0;
+}
+
+address {
+    margin:0px;
+    padding:0px;
+}
+
+i {
+    font-style: normal;
+}
+
+::-moz-selection { /* Code for Firefox */
+    background: $yellow;
+    color: #fff;
+}
+
+::selection {
+    background: $yellow;
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    //@include animate-fade;
+}
