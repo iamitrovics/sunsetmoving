@@ -28,7 +28,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div id="blog-page">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-lg-8">
                     <div class="blog-body">
                         <div class="blog-meta">
                             <span>Posted <Inp>
@@ -80,6 +80,14 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <?php the_sub_field('embedded_code'); ?>
                                         </div>
 
+                                    <?php elseif( get_row_layout() == 'quote_cta' ): ?>
+
+                                        <div class="quote-cta--single">
+                                            <span class="title"><?php the_sub_field('cta_title'); ?></span>
+                                            <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?></a>
+                                        </div>
+                                        <!-- // single  -->                                                 
+
                                     <?php endif; ?>
                                 <?php endwhile; ?>
                             <?php endif; ?>
@@ -88,8 +96,19 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <!-- /.blog-content -->
                     </div>
                     <!-- /.blog-body -->
+
                 </div>
                 <!-- /.col-md-12 -->
+
+                <div class="col-lg-4">
+                    <div id="bottom-form">
+
+                        <?php include(TEMPLATEPATH . '/inc/inc-quote.php'); ?>
+
+                    </div>
+                </div>
+                <!-- // sidebar form  -->
+
             </div>
             <!-- /.row -->
         </div>
