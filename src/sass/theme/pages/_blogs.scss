@@ -299,6 +299,7 @@
     }
     .single-table {
         margin-bottom: 30px;
+        border-spacing: 0;
         @include bp(sm-down) {
             display: block;
             overflow-x: auto;
