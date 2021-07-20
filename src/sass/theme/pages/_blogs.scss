@@ -297,6 +297,24 @@
             opacity: 0.6;            
         }
     }
+    .single-table {
+        margin-bottom: 30px;
+        @include media-breakpoint-down(sm) {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        th {
+            border: 1px solid;
+            background: rgba(3, 79, 155, 0.3);
+            color: #000;
+            padding: 3px 10px;
+        }
+        td {
+            border: 1px solid;
+            padding: 3px 10px;
+        }
+    }
     .video-holder {
         margin-bottom: 20px;
         position: relative;

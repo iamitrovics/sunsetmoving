@@ -40,7 +40,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                             echo '<a href="'.$cat_link.'">'.$categories[0]->cat_name.'</a>' 
                             ?>                               
                             
-                            </Inp> / <?php echo get_the_date( 'F j, Y' ); ?></span>
+                            </Inp> / <?php echo get_the_date( 'F j, Y' ); ?></span><br>
+                            <span>By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span>
                         </div>
                         <!-- /.blog-meta -->
                         <div class="blog-content">
