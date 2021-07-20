@@ -289,6 +289,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            width: 100%;
         }
         .caption {
             text-align: center;
@@ -982,6 +983,9 @@
         font-family: $font-heading;
     }
     a.btn-cta {
+        @include bp(sm-down) {
+            width: 100%;
+        }
         @include red-btn;
         width: 280px;
         margin:0px auto;
