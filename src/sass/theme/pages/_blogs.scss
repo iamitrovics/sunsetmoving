@@ -299,7 +299,7 @@
     }
     .single-table {
         margin-bottom: 30px;
-        @include media-breakpoint-down(sm) {
+        @include bp(sm-down) {
             display: block;
             overflow-x: auto;
             white-space: nowrap;
