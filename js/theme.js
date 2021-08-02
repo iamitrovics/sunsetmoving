@@ -6274,6 +6274,7 @@
         }
       });
     });
+    $('.full-content a').attr("target", "_blank");
     /*function parallax_init(){
         var element = document.getElementsByClassName('parallax');
         if (element.length > 0) {

@@ -239,7 +239,9 @@
                 }
               }
             });
-          });           
+          });      
+          
+          $('.full-content a').attr("target","_blank");
 
 
         /*function parallax_init(){
