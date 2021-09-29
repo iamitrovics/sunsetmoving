@@ -364,6 +364,34 @@
                     color: $yellow;
                 }
             }
+            .author-desc {
+                display: flex;
+                margin-top: 20px;
+                .author-content {
+                    align-self: center;
+                    a {
+                        color:$blue;
+                        margin-bottom: 10px;
+                        &:hover {
+                            color: $yellow;
+                        }
+                    }
+                    p {
+                        margin-bottom: 0;
+                        font-size: 12px;
+                        font-style: italic;
+                        line-height: 1.3;
+                    }
+                }
+                img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 2px solid;
+                    margin-right: 20px;
+                }
+            }
         }
         .blog-photo {
             margin-bottom: 20px;
