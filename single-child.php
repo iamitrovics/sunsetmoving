@@ -94,6 +94,42 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?></a>
                                         </div>
                                         <!-- // single  --> 
+
+                                    <?php elseif( get_row_layout() == 'featured_article' ): ?>    
+                                        <?php
+                                            $post_objects = get_sub_field('featured_article_list');
+
+                                            if( $post_objects ): ?>
+                                                <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+                                                    <?php setup_postdata($post); ?>
+                                                        
+                                                    <div class="featured-article">
+                                                        <div class="blog-item">
+                                                            <div class="blog-photo">
+                                                                <a href="<?php echo get_permalink(); ?>">
+                                                                    <?php
+                                                                    $imageID = get_field('featured_image_blog');
+                                                                    $image = wp_get_attachment_image_src( $imageID, 'large' );
+                                                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                                    ?> 
+
+                                                                    <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                                                </a>
+                                                            </div>
+                                                            <!-- /.blog-photo-->
+                                                            <div class="blog-content">
+                                                                <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                                                <a href="<?php echo get_permalink(); ?>" class="btn-cta">Read More</a>
+                                                            </div>
+                                                            <!-- /.blog-content -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.featured-article -->
+                                                        
+                                                <?php endforeach; ?>
+                                            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                                        <?php endif; ?>
+                                        <?php wp_reset_postdata(); ?>
                                         
                                     <?php elseif( get_row_layout() == 'table' ): ?>
 
@@ -212,6 +248,105 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
                 </div>
                 <!-- // sidebar form  -->
+
+                <div class="col-lg-12">
+                    <div class="related-posts">
+                        <h2>Recent Posts</h2>
+                        <div class="row">
+
+                        <?php
+                        $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3) ); ?>  
+                        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+                                <div class="col-md-4">
+                                    <div class="blog-item">
+                                        <div class="blog-photo">
+                                            <a href="<?php echo get_permalink(); ?>">
+                                                <?php
+                                                $imageID = get_field('featured_image_blog');
+                                                $image = wp_get_attachment_image_src( $imageID, 'large' );
+                                                $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                ?> 
+
+                                                <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                                <i class="fal fa-image"></i>
+                                            </a>
+                                        </div>
+                                        <!-- /.blog-photo-->
+                                        <div class="blog-content">
+                                            <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                            <a href="<?php echo get_permalink(); ?>" class="read-more">Read More</a>
+                                        </div>
+                                        <!-- /.blog-content -->
+                                    </div>
+                                    <!-- /.related-box -->
+                                </div>
+                                <!-- /.col-md-4 -->
+
+                                <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>    
+                        <?php wp_reset_query(); ?>
+
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.related-posts -->
+                    <div class="related-posts">
+                        <h2>Related Posts</h2>
+                        <div class="row">
+
+                        <?php
+                            $categories =   get_the_category();
+                            // print_r($categories);
+                            $rp_query   =  new WP_Query ([
+                                'posts_per_page'        =>  3,
+                                'post__not_in'          =>  [ $post->ID ],
+                                'cat'                   =>  !empty($categories) ? $categories[0]->term_id : null,
+
+                            ]);
+
+                            if ( $rp_query->have_posts() ) {
+                                while( $rp_query->have_posts() ) {
+                                    $rp_query->the_post();
+                                ?>
+
+                                <div class="col-md-4">
+                                    <div class="blog-item">
+                                        <div class="blog-photo">
+                                            <a href="<?php echo get_permalink(); ?>">
+                                                <?php
+                                                $imageID = get_field('featured_image_blog');
+                                                $image = wp_get_attachment_image_src( $imageID, 'large' );
+                                                $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                ?> 
+
+                                                <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                                <i class="fal fa-image"></i>
+                                            </a>
+                                        </div>
+                                        <!-- /.blog-photo-->
+                                        <div class="blog-content">
+                                            <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                            <a href="<?php echo get_permalink(); ?>" class="read-more">Read More</a>
+                                        </div>
+                                        <!-- /.blog-content -->
+                                    </div>
+                                    <!-- /.related-box -->
+                                </div>
+                                <!-- /.col-md-4 -->
+
+                                <?php
+                                }
+                                wp_reset_postdata();
+                            }
+                        ?>
+
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.related-posts -->
+
+                </div>
 
             </div>
             <!-- /.row -->
