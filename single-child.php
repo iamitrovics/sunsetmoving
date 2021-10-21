@@ -269,7 +269,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                                                 ?> 
 
                                                 <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
-                                                <i class="fal fa-image"></i>
                                             </a>
                                         </div>
                                         <!-- /.blog-photo-->
@@ -321,7 +320,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                                                 ?> 
 
                                                 <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
-                                                <i class="fal fa-image"></i>
                                             </a>
                                         </div>
                                         <!-- /.blog-photo-->
