@@ -261,7 +261,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 <div class="col-md-4">
                                     <div class="blog-item">
                                         <div class="blog-photo">
-                                            <a href="<?php echo get_permalink(); ?>">
+                                            <a href="<?php echo get_permalink(); ?>" target="_blank">
                                                 <?php
                                                 $imageID = get_field('featured_image_blog');
                                                 $image = wp_get_attachment_image_src( $imageID, 'large' );
@@ -274,8 +274,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         </div>
                                         <!-- /.blog-photo-->
                                         <div class="blog-content">
-                                            <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                            <a href="<?php echo get_permalink(); ?>" class="read-more">Read More</a>
+                                            <h2><a href="<?php echo get_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h2>
+                                            <a href="<?php echo get_permalink(); ?>" class="read-more" target="_blank">Read More</a>
                                         </div>
                                         <!-- /.blog-content -->
                                     </div>
