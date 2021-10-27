@@ -562,6 +562,17 @@ a#go-to-top i {
     }
 }
 
+#blog-accordion {
+    .set {
+        .accordion-heading  {
+            &:after {
+                font-family: 'icomoon'!important;
+                content: '\e908'!important;
+            }
+        }
+    }
+}
+
 #testimonials {
     .star-area {
         i {

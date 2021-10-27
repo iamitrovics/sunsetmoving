@@ -6114,6 +6114,21 @@
         e.preventDefault();
       });
     });
+    $(document).ready(function () {
+      $("#blog-accordion .set > a.accordion-heading").on("click", function (e) {
+        if ($(this).hasClass("active")) {
+          $(this).removeClass("active");
+          $(this).siblings("#blog-accordion .content").slideUp(200);
+        } else {
+          $("#blog-accordion .set > a.accordion-heading").removeClass("active");
+          $(this).addClass("active");
+          $("#blog-accordion .content").slideUp(200);
+          $(this).siblings("#blog-accordion .content").slideDown(200);
+        }
+
+        e.preventDefault();
+      });
+    });
     $('#reviews-slider').slick({
       infinite: false,
       speed: 300,
