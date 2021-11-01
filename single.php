@@ -155,7 +155,50 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
                                         <?php endif; ?>
                                         <?php wp_reset_postdata(); ?>
-                                        
+
+                                    <?php elseif( get_row_layout() == 'services_module' ): ?>
+
+                                        <div id="services-area" class="services-blog-module">
+                                            <div class="services-in">
+                                                <div class="row">
+
+                                                <?php
+                                                $post_objects = get_sub_field('services_list_blog_page');
+
+                                                if( $post_objects ): ?>
+                                                    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+                                                        <?php setup_postdata($post); ?>
+
+                                                        <div class="col-md-4">
+                                                            <div class="service-item services-module">
+                                                                
+                                                                <a href="<?php echo get_permalink(); ?>" target="_blank">
+                                                                <div class="overlay"></div>
+                                                                <?php
+                                                                $imageID = get_field('background_image_serv_single');
+                                                                $image = wp_get_attachment_image_src( $imageID, 'half-image' );
+                                                                $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                                ?>  
+
+                                                                <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                                                <span class="service-title"><?php the_title(); ?></span>
+                                                                </a>
+                                                            </div>
+                                                            <!-- /.service-item -->
+                                                        </div>
+                                                        <!-- /.col-md-4 -->
+
+                                                    <?php endforeach; ?>
+                                                <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                                                <?php endif; ?>
+
+                                                </div>
+                                                <!-- /.row -->
+                                            </div>
+                                            <!-- /.services-in -->
+                                        </div>
+                                        <!-- /#services-area -->
+
                                     <?php elseif( get_row_layout() == 'table' ): ?>
 
                                         <table style="width:100%" class="single-table">
