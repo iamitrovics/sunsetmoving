@@ -103,6 +103,41 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div>
 	<!-- overlay -->	
 
+	<?php 
+	$values = get_field( 'phone_number_city' );
+	if ( $values ) { ?>
+		
+	<div id="fixed-cta">
+		<a href="tel:<?php the_field('phone_number_city'); ?>">
+			<i class="icon-phone"></i>
+			<div class="phone-text">
+				<small class="label">Get a Free Estimate</small>
+				<span><?php the_field('phone_number_city'); ?></span>
+			</div>
+			<!-- // text  -->
+		</a>
+
+	</div>
+	<!-- // fixed cta  -->	
+
+	<?php 
+	} else { ?>
+
+	<div id="fixed-cta">
+		<a href="tel:<?php the_field('main_phone_number_top_gen', 'options'); ?>">
+			<i class="icon-phone"></i>
+			<div class="phone-text">
+				<small class="label">Get a Free Estimate</small>
+				<span><?php the_field('main_phone_number_top_gen', 'options'); ?></span>
+			</div>
+			<!-- // text  -->
+		</a>
+
+	</div>
+	<!-- // fixed cta  -->
+
+	<?php } ?>
+
 	<?php wp_footer(); ?>
 
 	<?php if( get_field('footer_code_snippet', 'options') ): ?>

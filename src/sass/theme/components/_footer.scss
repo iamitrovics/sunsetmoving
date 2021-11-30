@@ -95,7 +95,7 @@ a#go-to-top {
     filter: alpha(opacity=0);
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
     position: fixed;
-    right: 20px;
+    left: 20px;
     z-index: 9996;
     display: block;
     bottom: 72px;
@@ -107,6 +107,9 @@ a#go-to-top {
     -o-transition: all ease .3s;
     cursor: pointer;
     visibility: hidden;
+    @include bp(sm-down) {
+        bottom:10px;
+    }
     i {
         color: #fff;
         font-size: 16px;
@@ -124,4 +127,65 @@ a#go-to-top {
 
 /*=======End of Footer ========*/
 
+// fixed cta
+// Fixed cta
+#fixed-cta {
+    position: fixed;
+    bottom:15px;
+    right:15px;
+    background:#d71f1b;
+    z-index:10000;
+    @include bp(sm-down) {
+        bottom:0px;
+        right:0px;
+        text-align: center;
+    }
+    a {
+        padding-left: 70px;
+        padding-right: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: block;        
+        @include bp(sm-down) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    animation: pulse 1.5s ease infinite;
+    i {
+        @include centre(y);
+        color:$white;
+        font-size: 24px;
+        left:25px;
+        @include bp(sm-down) {
+            left:30px;
+        }
+    }
+    span {
+        display: block;
+        text-transform: uppercase;
+        color:$white;
+        font-size: 26px;
+        font-family:$lato-bold;
+    }
+    small {
+        font-size: 18px;
+        color:$white;
+        display: block;
+    }
+}
 
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+      background:$blue;
+    }
+    100% {
+      transform: scale(1);
+      opacity:1 ;
+    }
+  }
