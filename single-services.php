@@ -52,7 +52,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         <!-- /.container -->
     </header>
 
-    <section id="about-page">
+    <section id="services-page">
         <div class="container">
 
             <?php if( have_rows('content_layout_single_serv') ): ?>
@@ -85,6 +85,97 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <!-- /.col-md-6 -->
                         </div>
                         <!-- /.row -->
+
+                    <?php elseif( get_row_layout() == 'image_left_text_right' ): ?>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="featured-photo half-img">
+                                    <?php
+                                    $imageID = get_sub_field('featured_image');
+                                    $image = wp_get_attachment_image_src( $imageID, 'side-image' );
+                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                    ?> 
+
+                                    <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                    <div class="caption">
+                                        <?php the_sub_field('image_caption'); ?>
+                                    </div>
+                                </div>
+                            </div> <!-- col-md-6 -->
+                            <div class="col-md-6">
+                                <?php the_sub_field('content_block'); ?>
+                            </div> <!-- col-md-6 -->
+                        </div>
+                        <!-- /.row -->   
+
+                    <?php elseif( get_row_layout() == 'image_right_text_left' ): ?>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <?php the_sub_field('content_block'); ?>
+                            </div> <!-- col-md-6 -->
+                            <div class="col-md-6">
+                                <div class="featured-photo half-img">
+                                    <?php
+                                    $imageID = get_sub_field('featured_image');
+                                    $image = wp_get_attachment_image_src( $imageID, 'side-image' );
+                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                    ?> 
+
+                                    <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                    <div class="caption">
+                                        <?php the_sub_field('image_caption'); ?>
+                                    </div>
+                                </div>
+                            </div> <!-- col-md-6 -->
+                        </div>
+                        <!-- /.row -->   
+
+                    <?php elseif( get_row_layout() == 'full_width_image' ): ?>
+
+                        <div class="featured-photo">
+                            <?php
+                            $imageID = get_sub_field('featured_image');
+                            $image = wp_get_attachment_image_src( $imageID, 'side-image' );
+                            $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                            ?> 
+
+                            <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                            <div class="caption">
+                                <?php the_sub_field('image_caption'); ?>
+                            </div>
+                        </div>
+
+                    <?php elseif( get_row_layout() == 'video' ): ?>
+
+                        <div class="video-holder">
+                            <?php the_sub_field('embedded_code'); ?>
+                        </div>
+
+                    <?php elseif( get_row_layout() == 'accordion' ): ?>				
+
+                        <div id="blog-accordion">
+
+                            <?php if( get_sub_field('accordion_title') ): ?>
+                                <h3><?php the_sub_field('accordion_title'); ?></h3>
+                            <?php endif; ?>
+
+                            <?php if( have_rows('accordion_list') ): ?>
+                                <?php while( have_rows('accordion_list') ): the_row(); ?>
+
+                                    <div class="set">
+                                        <a href="#" class="accordion-heading"><?php the_sub_field('heading'); ?></a>
+                                        <div class="content">
+                                            <?php the_sub_field('content'); ?>
+                                        </div>
+                                    </div>
+
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+
+                        </div>
+                        <!-- /#blog-accordion -->
 
                     <?php endif; ?>
                 <?php endwhile; ?>
