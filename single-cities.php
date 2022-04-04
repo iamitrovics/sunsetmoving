@@ -99,7 +99,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
             <?php elseif( get_row_layout() == 'image_left_content_right' ): ?>
 
-                <section id="city-more">
+                <section class="city-more">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 cm-photo-wrap">
@@ -127,7 +127,55 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
                     <!-- /.container -->
                 </section>
-                <!-- /#city-more -->                
+                <!-- /#city-more -->      
+                
+            <?php elseif( get_row_layout() == 'image_right_content_left' ): ?>
+
+                <section class="city-more right-img">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 right-img-col">
+                                <div class="cm-content">
+                                    <?php the_sub_field('content_block'); ?>
+                                </div>
+                                <!-- /.cm-content -->
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <div class="col-md-6 cm-photo-wrap">
+                                <div class="cm-photo">
+                                    <?php
+                                    $imageID = get_sub_field('featured_image');
+                                    $image = wp_get_attachment_image_src( $imageID, 'side-image' );
+                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                    ?> 
+
+                                    <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                </div>
+                                <!-- /.cm-photo -->
+                            </div>
+                            <!-- /.cm-photo-wrap -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </section>
+                <!-- /#city-more -->   
+
+            <?php elseif( get_row_layout() == 'full_width_section' ): ?>
+
+                <section id="full-width-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="offset-md-1 col-md-10">
+                                <?php the_sub_field('full_width_content'); ?>
+                            </div>
+                            <!-- /.cm-photo-wrap -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </section>
+                <!-- /#city-more -->   
 
             <?php elseif( get_row_layout() == 'services' ): ?>
 
