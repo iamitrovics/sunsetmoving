@@ -139,6 +139,13 @@ $container = get_theme_mod( 'understrap_container_type' );
     </div>
     <!-- // single  -->
 
+    <script>
+        if (!sessionStorage.alreadyClicked) {
+            jQuery('#cookie-notice').addClass('slide-up');
+            sessionStorage.alreadyClicked = 1;
+        }
+    </script> 	
+
  
 <?php
 get_footer();
