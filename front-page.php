@@ -4,13 +4,7 @@
 **/
 get_header(); ?>
 
-    <?php
-    $imageID = get_field('background_image_hero_home');
-    $image = wp_get_attachment_image_src( $imageID, 'full-image' );
-    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
-    ?> 
-
-    <header id="masheader"  data-parallax="scroll" data-image-src="<?php echo $image[0]; ?>">
+    <header id="masheader">
         <div class="container">
             <div class="row">
                 <div class="col-xl-7 col-lg-6">
@@ -91,13 +85,13 @@ get_header(); ?>
     </div>
     <!-- /#services-area -->
 
-    <?php
+    <!-- <?php
     $imageID = get_field('background_image_faq_home');
     $image = wp_get_attachment_image_src( $imageID, 'full-image' );
     $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
-    ?> 
+    ?>  -->
 
-    <section id="faq-area"  style="background-image: url(<?php echo $image[0]; ?>)">
+    <section id="faq-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -166,13 +160,7 @@ get_header(); ?>
     </section>
     <!-- /.home-section -->
 
-    <?php
-    $imageID = get_field('background_image_test_home');
-    $image = wp_get_attachment_image_src( $imageID, 'full-image' );
-    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
-    ?> 
-
-    <div id="testimonials" style="background-image: url(<?php echo $image[0]; ?>)">
+    <div id="testimonials">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

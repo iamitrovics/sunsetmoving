@@ -579,7 +579,8 @@
                 }
                 span {
                     color: #999999;
-                    font-family: $lato-italic;
+                    font-family: $lato-reg;
+                    font-style: italic;
                     font-size: 14px;
                     display: inline-block;
                     vertical-align: middle;
@@ -876,7 +877,8 @@
                 span {
                     font-size: 12px;
                     line-height: 20px;
-                    font-family: $lato-italic;
+                    font-family: $lato-reg;
+                    font-style: italic;
                     display: inline-block; 
                     color: #999;
                 }

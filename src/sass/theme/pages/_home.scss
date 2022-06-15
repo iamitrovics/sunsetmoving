@@ -131,6 +131,7 @@
 }
 
 #faq-area {
+    background: url('../img/bg/cta-bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;
@@ -152,6 +153,7 @@
     @include bp(sm-down) {
         padding-top: 40px;
         padding-bottom: 40px;
+        background: #a79f97;
     }
     &:after {
         content: '';
@@ -415,6 +417,7 @@
     }
 }
 #testimonials {
+    background: url('../img/bg/movers-testimonials.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -433,10 +436,14 @@
     @include bp(md) {
         padding-top: 50px;
         padding-bottom: 50px;
+        background: url('../img/bg/reviews-bg.webp');
+        background-size: cover;
     }
     @include bp(sm-down) {
         padding-top: 40px;
         padding-bottom: 40px;
+        background: url('../img/bg/reviews-bg.webp');
+        background-size: cover;
     }
     &:after {
         content: '';
