@@ -42,7 +42,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <!-- /.header-caption -->
                     <div class="trusted-logos">
                         <ul>
-                            <li><a href="<?php the_field('yelp_link_city', 'options'); ?>" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/logos/yelp-150x150.png" alt="Yelp" width="100" height="100"></a></li>
+                            <li><a href="<?php the_field('yelp_link_city', 'options'); ?>" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/logos/yelp-150x150.png" alt="Yelp" width="100" height="100">ca</a></li>
                             <li><a href="<?php the_field('fmc_link_city', 'options'); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php bloginfo('template_directory'); ?>/img/logos/fmc-150x150.png" alt="FMC" width="100" height="100"></a></li>
                             <li><a href="<?php the_field('bbb_link_city', 'options'); ?>" target="_blank" ><img src="<?php bloginfo('template_directory'); ?>/img/logos/bbb-150x150.png?x93874" alt="BBB" width="100" height="100"></a></li>
                         </ul>
