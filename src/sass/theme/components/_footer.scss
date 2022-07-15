@@ -152,6 +152,9 @@ a#go-to-top {
         }
     }
     animation: pulse 1.5s ease infinite;
+    @include bp(sm-down) {
+        animation: none;
+    }
     i {
         @include centre(y);
         color:$white;

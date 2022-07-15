@@ -257,7 +257,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
                 <!-- /.col-md-12 -->
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 blog-sidebar">
                     <div id="bottom-form">
 
                         <?php include(TEMPLATEPATH . '/inc/inc-quote.php'); ?>

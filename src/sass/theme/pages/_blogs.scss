@@ -36,6 +36,12 @@
                 object-fit: cover;
                 height: 280px;
                 width: 100%;
+                @include bp(lg) {
+                    height: 230px;
+                }
+                @include bp(md) {
+                    height: 210px;
+                }
             }
             a {
                 display: block;
@@ -1275,4 +1281,22 @@
             }
         }
     }        
+}
+
+// Blog sidebar
+.blog-sidebar {
+    #bottom-form {
+        position: sticky;
+        top:110px;
+        @include bp(sm-down) {
+            position: relative;
+            top:auto;
+        }
+        .quote-form {
+            @include bp(md) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
 }
