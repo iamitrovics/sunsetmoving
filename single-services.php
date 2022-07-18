@@ -19,7 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     ?> 
 
     <!--<header id="masheader"  data-parallax="scroll" style="background-image: url(img/bg/internationalmovers-air-bg.jpg)" class="parallax">-->
-    <header id="masheader"  data-parallax="scroll" data-image-src="<?php echo $image[0]; ?>">
+    <header id="masheader"  data-parallax="scroll" style="background:url('<?php echo $image[0]; ?>');background-size:cover;background-position:center center;"  data-image-src="<?php echo $image[0]; ?>">
         <div class="container">
             <div class="row">
                 <div class="col-xl-7 col-lg-6">
