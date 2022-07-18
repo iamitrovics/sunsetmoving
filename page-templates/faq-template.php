@@ -16,7 +16,7 @@ get_header();
     $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
     ?> 
 
-    <header id="masheader" data-parallax="scroll" data-image-src="<?php echo $image[0]; ?>">
+    <header id="masheader" data-parallax="scroll" style="background:url('<?php echo $image[0]; ?>');background-size:cover;background-position:center center;"  data-image-src="<?php echo $image[0]; ?>">
         <div class="container">
             <div class="row">
                 <div class="col-xl-7 col-lg-6">

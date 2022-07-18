@@ -16,7 +16,7 @@ get_header();
 	$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
 	?> 
 
-    <header id="masheader" data-parallax="scroll" data-image-src="<?php echo $image[0]; ?>" class="shipment-tracking-header">
+    <header id="masheader" style="background:url('<?php echo $image[0]; ?>');background-size:cover;background-position:center center;"  data-parallax="scroll" data-image-src="<?php echo $image[0]; ?>" class="shipment-tracking-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
